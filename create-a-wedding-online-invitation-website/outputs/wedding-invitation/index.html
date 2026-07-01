@@ -1,123 +1,359 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Aarav &amp; Meera Wedding Invitation</title>
-  <meta name="description" content="A modern music-themed online wedding invitation.">
-  <link rel="preload" as="image" href="assets/music-wedding-bg.png">
-  <link rel="stylesheet" href="styles.css">
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Kamal & Dayana | Wedding Invitation</title>
+
+<meta
+name="description"
+content="Join us as we celebrate our wedding with music, love and unforgettable memories.">
+
+<link rel="stylesheet" href="styles.css">
+
 </head>
+
 <body>
-  <audio id="wedding-melody" loop preload="auto">
+
+<audio id="wedding-melody" loop preload="auto">
     <source src="assets/wedding-melody.wav" type="audio/wav">
-  </audio>
+</audio>
 
-  <div class="gate" id="gate" aria-label="Wedding invitation entrance">
-    <div class="door door-left" aria-hidden="true">
-      <div class="door-panel">
-        <span class="staff staff-one"></span>
-        <span class="staff staff-two"></span>
-      </div>
-    </div>
-    <div class="door door-right" aria-hidden="true">
-      <div class="door-panel">
-        <span class="staff staff-three"></span>
-        <span class="staff staff-four"></span>
-      </div>
-    </div>
-    <div class="gate-center">
-      <p class="gate-kicker">Wedding Invitation</p>
-      <h1>Kamal &amp; Dayana</h1>
-      <button class="open-button" id="openInvite" type="button" aria-controls="invitation" aria-expanded="false">
-        <span class="button-mark" aria-hidden="true">&#9835;</span>
-        <span>Open Invitation</span>
-      </button>
-    </div>
-  </div>
+<!-- ================= DOOR ================= -->
 
-  <main class="site-shell" id="invitation" aria-hidden="true">
-    <button class="music-toggle" id="musicToggle" type="button" aria-label="Pause music" hidden>
-      <span class="music-bars" aria-hidden="true"><i></i><i></i><i></i></span>
-    </button>
+<div class="gate" id="gate">
 
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="floating-notes" aria-hidden="true">
-        <span>&#9835;</span><span>&#9834;</span><span>&#9833;</span><span>&#9835;</span><span>&#9834;</span>
-      </div>
-      <div class="hero-content">
-        <p class="eyebrow">Together with their families</p>
-        <h1 id="hero-title">Kamal &amp; Dayana</h1>
-        <p class="hero-copy">invite you to celebrate a love story set to music, laughter, and forever.</p>
-        <div class="date-strip" aria-label="Wedding date and time">
-          <span>Sunday</span>
-          <strong>23 August 2026</strong>
-          <span>11:25 AM onwards</span>
-        </div>
-      </div>
-    </section>
+<div class="door door-left"></div>
 
-    <section class="details-band" aria-label="Wedding details">
-      <div class="section-heading">
-        <p class="eyebrow">The celebration</p>
-        <h2>Wedding Details</h2>
-      </div>
-      <div class="detail-grid">
-        <article class="detail-card">
-          <span class="detail-icon">01</span>
-          <h3>Ceremony</h3>
-          <p>Garden vows under candlelight with a live string ensemble.</p>
-          <strong>11:25 AM</strong>
-        </article>
-        <article class="detail-card">
-          <span class="detail-icon">02</span>
-          <h3>Dinner</h3>
-          <p>A warm family dinner followed by desserts and toasts.</p>
-          <strong>11:25 AM</strong>
-        </article>
-        <article class="detail-card">
-          <span class="detail-icon">03</span>
-          <h3>Reception</h3>
-          <p>First dance, melodies, and an open floor for every guest.</p>
-          <strong>11:25 AM</strong>
-        </article>
-      </div>
-    </section>
+<div class="door door-right"></div>
 
-    <section class="venue-band" aria-label="Venue and RSVP">
-      <div class="venue-copy">
-        <p class="eyebrow">Where music meets love</p>
-        <h2>Samudra River View</h2>
-        <p>Kottappuram</p>
-      </div>
-      <div class="venue-actions">
-        <a href="https://maps.google.com/?q=The%20Grand%20Harmony%20Hall%20MG%20Road%20Bengaluru" target="_blank" rel="noreferrer">View Map</a>
-        <a href="mailto:rsvp@example.com?subject=Wedding%20RSVP%20-%20Kamal%20and%20Dayana">RSVP</a>
-      </div>
-    </section>
+<div class="gate-center">
 
-    <section class="music-band" aria-label="Music theme">
-      <div class="record" aria-hidden="true">
-        <div class="record-core"></div>
-      </div>
-      <div class="music-copy">
-        <p class="eyebrow">Our playlist</p>
-        <h2>A celebration in rhythm</h2>
-        <p>From the entrance melody to the final dance, every moment is arranged like a song: soft, bright, and full of heart.</p>
-        <div class="playlist-row">
-          <span>Vows in strings</span>
-          <span>First dance</span>
-          <span>Family classics</span>
-        </div>
-      </div>
-    </section>
+<p class="gate-kicker">
+♪ You're Invited ♪
+</p>
 
-    <section class="closing" aria-label="Closing message">
-      <p>With love and joy, we hope to celebrate this beautiful day with you.</p>
-      <h2>Kamal &amp; Dayana</h2>
-    </section>
-  </main>
+<h1>
+Kamal <span>&</span> Dayana
+</h1>
 
-  <script src="script.js"></script>
+<p class="gate-subtitle">
+Two Hearts • One Melody • Forever Together
+</p>
+
+<button id="openInvite" class="open-button">
+
+<span>Open Invitation</span>
+
+</button>
+
+</div>
+
+</div>
+
+<!-- ================= MAIN ================= -->
+
+<main class="site-shell" id="invitation">
+
+<button class="music-toggle"
+id="musicToggle"
+hidden>
+
+♫
+
+</button>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<p class="eyebrow">
+Together with our beloved families
+</p>
+
+<h1>
+
+Kamal
+
+<span>&</span>
+
+Dayana
+
+</h1>
+
+<p class="hero-copy">
+
+With immense joy and gratitude,
+
+we warmly invite you to be a part of the most cherished day of our lives as we begin our forever together.
+
+</p>
+
+<div class="date-strip">
+
+<span>Sunday</span>
+
+<strong>23 August 2026</strong>
+
+<span>11:25 AM onwards</span>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- QUOTE -->
+
+<section class="quote-section">
+
+<h2>
+
+"Every love story is beautiful,
+
+but ours is our favorite."
+
+</h2>
+
+</section>
+
+<!-- GALLERY -->
+
+<section class="details-band">
+
+<div class="section-heading">
+
+<p class="eyebrow">
+
+Captured Moments
+
+</p>
+
+<h2>
+
+Our Journey
+
+</h2>
+
+<p>
+
+A collection of memories that led us to this beautiful chapter.
+
+</p>
+
+</div>
+
+<div class="gallery">
+
+<img src="assets/gallery1.jpg">
+
+<img src="assets/gallery2.jpg">
+
+<img src="assets/gallery3.jpg">
+
+<img src="assets/gallery4.jpg">
+
+<img src="assets/gallery5.jpg">
+
+<img src="assets/gallery6.jpg">
+
+</div>
+
+</section>
+
+<!-- CEREMONY -->
+
+<section class="ceremony">
+
+<div class="section-heading">
+
+<p class="eyebrow">
+
+Wedding Ceremony
+
+</p>
+
+<h2>
+
+Save the Date
+
+</h2>
+
+</div>
+
+<div class="event-card">
+
+<h3>
+
+23 August 2026
+
+</h3>
+
+<p>
+
+Sunday
+
+</p>
+
+<p>
+
+11:25 AM onwards
+
+</p>
+
+</div>
+
+</section>
+
+<!-- VENUE -->
+
+<section class="venue-band">
+
+<div class="venue-copy">
+
+<p class="eyebrow">
+
+Venue
+
+</p>
+
+<h2>
+
+Samudra River View
+
+</h2>
+
+<p>
+
+Kottappuram,
+
+Kerala
+
+</p>
+
+<p>
+
+We look forward to celebrating this unforgettable occasion with you.
+
+</p>
+
+</div>
+
+<div class="venue-actions">
+
+<a href="https://maps.google.com">
+
+View Location
+
+</a>
+
+<a href="mailto:rsvp@example.com">
+
+RSVP
+
+</a>
+
+</div>
+
+</section>
+
+<!-- MUSIC -->
+
+<section class="music-band">
+
+<div class="record">
+
+<div class="record-core">
+
+♫
+
+</div>
+
+</div>
+
+<div class="music-copy">
+
+<p class="eyebrow">
+
+Our Melody
+
+</p>
+
+<h2>
+
+A Celebration Written in Music
+
+</h2>
+
+<p>
+
+Every note tells a story.
+
+Every rhythm holds a memory.
+
+Every song brings us closer to forever.
+
+Join us as love becomes the most beautiful melody of all.
+
+</p>
+
+<div class="playlist-row">
+
+<span>Love</span>
+
+<span>Joy</span>
+
+<span>Forever</span>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- THANK YOU -->
+
+<section class="closing">
+
+<p>
+
+Your blessings and presence
+
+will make our celebration complete.
+
+</p>
+
+<h2>
+
+We Can't Wait To Celebrate With You
+
+</h2>
+
+<h1>
+
+Kamal & Dayana
+
+</h1>
+
+<p class="footer-date">
+
+23 August 2026
+
+</p>
+
+</section>
+
+</main>
+
+<script src="script.js"></script>
+
 </body>
+
 </html>
