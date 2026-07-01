@@ -84,7 +84,6 @@
       border-left: 4px solid var(--secondary);
     }
 
-    /* Music Staff Lines on Doors */
     .staff {
       display: block;
       width: 100%;
@@ -95,7 +94,6 @@
 
     .door-panel { width: 100%; padding: 0 20px; }
 
-    /* Open Animation Classes */
     .gate.open .door-left { transform: translateX(-100%); }
     .gate.open .door-right { transform: translateX(100%); }
     .gate.open .gate-center { opacity: 0; pointer-events: none; }
@@ -231,7 +229,6 @@
       100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
     }
 
-    /* General Sections */
     section { padding: 80px 5%; text-align: center; }
     
     .section-heading h2 {
@@ -239,28 +236,113 @@
       color: var(--primary);
       margin-bottom: 40px;
     }
-    .section-heading .eyebrow { color: var(--secondary); }
 
-    /* Photo Gallery */
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
-      max-width: 1200px;
+    /* =========================================================
+       CAROUSEL GALLERY WITH DOWNLOAD BUTTON
+       ========================================================= */
+    .carousel-wrapper {
+      position: relative;
+      max-width: 800px;
       margin: 0 auto;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+      background-color: var(--primary);
     }
-    .gallery img {
-      width: 100%;
-      height: 300px;
-      object-fit: cover;
-      border-radius: 15px;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.08);
-      transition: transform 0.4s ease;
-      background-color: var(--accent); /* Fallback color if image is missing */
-    }
-    .gallery img:hover { transform: scale(1.03); }
 
-    /* Venue Band */
+    .carousel-track-container {
+      overflow: hidden;
+      width: 100%;
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.6s ease-in-out;
+      list-style: none;
+    }
+
+    .carousel-slide {
+      min-width: 100%;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .carousel-slide img {
+      width: 100%;
+      height: 500px; /* Fixed height for consistency */
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Download Button Overlay */
+    .download-btn {
+      position: absolute;
+      bottom: 25px;
+      right: 25px;
+      background: var(--secondary);
+      color: var(--primary);
+      padding: 10px 20px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: transform 0.3s, background 0.3s;
+    }
+
+    .download-btn:hover {
+      transform: scale(1.05);
+      background: #e3c457;
+    }
+
+    .download-icon {
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+
+    /* Carousel Navigation Buttons */
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(10, 25, 47, 0.6);
+      color: var(--secondary);
+      border: 2px solid var(--secondary);
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 10;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .carousel-btn:hover {
+      background: var(--secondary);
+      color: var(--primary);
+    }
+
+    .carousel-btn.prev { left: 15px; }
+    .carousel-btn.next { right: 15px; }
+
+    /* Responsive adjustment for carousel height */
+    @media(max-width: 768px) {
+      .carousel-slide img {
+        height: 350px;
+      }
+    }
+
+    /* =========================================================
+       VENUE, MUSIC & CLOSING SECTIONS
+       ========================================================= */
     .venue-band {
       background-color: var(--primary);
       color: var(--text-light);
@@ -284,7 +366,6 @@
     }
     .venue-actions a:hover { background: var(--text-light); }
 
-    /* Music Section */
     .music-band {
       background-color: var(--accent);
       margin: 40px 5%;
@@ -333,7 +414,6 @@
       box-shadow: 0 4px 10px rgba(0,0,0,0.05);
     }
 
-    /* Closing */
     .closing { padding: 100px 20px; }
     .closing p { font-size: 1.2rem; font-style: italic; margin-bottom: 20px; }
     .closing h2 { font-size: 3rem; color: var(--primary); }
@@ -432,18 +512,65 @@
       </div>
     </section>
 
+    <!-- Carousel Gallery Section -->
     <section class="details-band">
       <div class="section-heading">
         <p class="eyebrow">Our Memories</p>
         <h2>Photo Gallery</h2>
       </div>
-      <div class="gallery">
-        <img src="assets/gallery1.jpg" alt="Bride and Groom">
-        <img src="assets/gallery2.jpg" alt="Engagement">
-        <img src="assets/gallery3.jpg" alt="Couple">
-        <img src="assets/gallery4.jpg" alt="Pre Wedding">
-        <img src="assets/gallery5.jpg" alt="Family">
-        <img src="assets/gallery6.jpg" alt="Wedding">
+      
+      <div class="carousel-wrapper">
+        <button class="carousel-btn prev" aria-label="Previous image">&#10094;</button>
+        
+        <div class="carousel-track-container">
+          <ul class="carousel-track">
+            
+            <li class="carousel-slide">
+              <img src="assets/gallery1.jpg" alt="Bride and Groom">
+              <a href="assets/gallery1.jpg" download="Kamal_Dayana_1.jpg" class="download-btn">
+                <span class="download-icon">&#10515;</span> Download
+              </a>
+            </li>
+            
+            <li class="carousel-slide">
+              <img src="assets/gallery2.jpg" alt="Engagement">
+              <a href="assets/gallery2.jpg" download="Kamal_Dayana_2.jpg" class="download-btn">
+                <span class="download-icon">&#10515;</span> Download
+              </a>
+            </li>
+            
+            <li class="carousel-slide">
+              <img src="assets/gallery3.jpg" alt="Couple">
+              <a href="assets/gallery3.jpg" download="Kamal_Dayana_3.jpg" class="download-btn">
+                <span class="download-icon">&#10515;</span> Download
+              </a>
+            </li>
+            
+            <li class="carousel-slide">
+              <img src="assets/gallery4.jpg" alt="Pre Wedding">
+              <a href="assets/gallery4.jpg" download="Kamal_Dayana_4.jpg" class="download-btn">
+                <span class="download-icon">&#10515;</span> Download
+              </a>
+            </li>
+            
+            <li class="carousel-slide">
+              <img src="assets/gallery5.jpg" alt="Family">
+              <a href="assets/gallery5.jpg" download="Kamal_Dayana_5.jpg" class="download-btn">
+                <span class="download-icon">&#10515;</span> Download
+              </a>
+            </li>
+            
+            <li class="carousel-slide">
+              <img src="assets/gallery6.jpg" alt="Wedding">
+              <a href="assets/gallery6.jpg" download="Kamal_Dayana_6.jpg" class="download-btn">
+                <span class="download-icon">&#10515;</span> Download
+              </a>
+            </li>
+            
+          </ul>
+        </div>
+
+        <button class="carousel-btn next" aria-label="Next image">&#10095;</button>
       </div>
     </section>
 
@@ -454,7 +581,6 @@
         <p>Kottappuram</p>
       </div>
       <div class="venue-actions">
-        <!-- Corrected Map Link -->
         <a href="https://maps.google.com/?q=Samudra+River+View+Kottappuram" target="_blank" rel="noreferrer">View Map</a>
         <a href="mailto:rsvp@example.com?subject=Wedding%20RSVP%20-%20Kamal%20and%20Dayana">RSVP</a>
       </div>
@@ -485,35 +611,31 @@
   <!-- JavaScript for Interactions -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
+      // --- GATE & AUDIO LOGIC ---
       const openBtn = document.getElementById("openInvite");
       const gate = document.getElementById("gate");
       const invitation = document.getElementById("invitation");
       const audio = document.getElementById("wedding-melody");
       const musicToggle = document.getElementById("musicToggle");
 
-      // Open Invitation Logic
       openBtn.addEventListener("click", () => {
-        // 1. Open Gate doors visually
         gate.classList.add("open");
         openBtn.setAttribute("aria-expanded", "true");
         
-        // 2. Play Background Music
         audio.play().then(() => {
           musicToggle.classList.remove("paused");
         }).catch(err => {
           console.log("Autoplay blocked by browser. User will need to manually toggle audio.", err);
         });
 
-        // 3. Reveal Main Content & Audio Button after transition
         setTimeout(() => {
           gate.style.display = "none";
           invitation.setAttribute("aria-hidden", "false");
           invitation.classList.add("visible");
           musicToggle.removeAttribute("hidden");
-        }, 1200); // Waits for the door sliding animation to finish
+        }, 1200); 
       });
 
-      // Music Toggle Button Logic
       musicToggle.addEventListener("click", () => {
         if (audio.paused) {
           audio.play();
@@ -524,6 +646,31 @@
           musicToggle.classList.add("paused");
           musicToggle.setAttribute("aria-label", "Play music");
         }
+      });
+
+      // --- CAROUSEL LOGIC ---
+      const track = document.querySelector('.carousel-track');
+      const slides = Array.from(track.children);
+      const nextButton = document.querySelector('.carousel-btn.next');
+      const prevButton = document.querySelector('.carousel-btn.prev');
+      
+      let currentIndex = 0;
+
+      const updateCarousel = () => {
+        // Move the track by -100% for each index to slide horizontally
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+      };
+
+      nextButton.addEventListener('click', () => {
+        // Loop back to the start if at the end
+        currentIndex = (currentIndex + 1) % slides.length;
+        updateCarousel();
+      });
+
+      prevButton.addEventListener('click', () => {
+        // Loop to the end if at the start
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        updateCarousel();
       });
     });
   </script>
