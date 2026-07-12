@@ -39,6 +39,36 @@ a {
   display: none;
 }
 
+.countdown {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.countdown div {
+  min-width: 85px;
+  padding: 14px;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.25);
+  text-align: center;
+}
+
+.countdown span {
+  display: block;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #d4af37;
+}
+
+.countdown small {
+  color: #fff;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+}
 .gate {
   position: fixed;
   inset: 0;
@@ -619,6 +649,24 @@ body.invite-open .site-shell {
 
   .date-strip strong {
     white-space: normal;
+  }
+
+  .countdown {
+    gap: 10px;
+  }
+
+  .countdown div {
+    min-width: 70px;
+    padding: 10px 12px;
+    border-radius: 10px;
+  }
+
+  .countdown span {
+    font-size: 1.6rem;
+  }
+
+  .countdown small {
+    font-size: 0.75rem;
   }
 
   .detail-card {
